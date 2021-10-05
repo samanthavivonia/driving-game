@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.background {
+  background-color: #278d25;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
+  height: 100vh;
+  border: #1c671b solid 5px;
+  padding: 0 25px;
+}
+
+.car {
+  width: 10%;
+}
