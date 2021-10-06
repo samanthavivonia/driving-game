@@ -1,31 +1,35 @@
 var $car = document.querySelector('.car');
 
 var car = {
-  x: 0,
+  x: 25,
   y: 0
 };
 
-function moveCarLeft(number) {
-  $car.style.left = (car.x + number) + 'px';
-  car.x += number;
+var timer;
+
+function startCar() {
+  timer = setInterval(moveCarLeft, 16);
 }
 
-function moveCarRight(number) {
-  $car.style.left = (car.x - number) + 'px';
-  car.x -= number;
+function stopCar() {
+  clearInterval(timer);
 }
 
-function moveCarDown(number) {
-  $car.style.top = (car.y + number) + 'px';
-  car.y += number;
+function moveCarLeft() {
+  $car.style.left = (car.x += 1) + 'px';
 }
 
-function moveCarUp(number) {
-  $car.style.top = (car.y - number) + 'px';
-  car.y -= number;
-}
+startCar();
+stopCar();
 
-moveCarLeft(0);
-moveCarRight(0);
-moveCarDown(0);
-moveCarUp(0);
+// function moveCarRight() {
+//   $car.style.left = (car.x -= 1) + 'px';
+// }
+
+// function moveCarDown() {
+//   $car.style.down = (car.y += 1) + 'px';
+// }
+
+// function moveCarUp() {
+//   $car.style.down = (car.y -= 1) + 'px';
+// }
