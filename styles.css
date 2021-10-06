@@ -8,9 +8,6 @@ body {
 
 .background {
   background-color: #278d25;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
   width: 100vw;
   height: 100vh;
   border: #1c671b solid 5px;
@@ -19,4 +16,5 @@ body {
 
 .car {
   width: 10%;
+  position: absolute;
 }
