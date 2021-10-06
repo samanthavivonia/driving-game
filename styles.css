@@ -17,4 +17,5 @@ body {
 .car {
   width: 10%;
   position: absolute;
+  transition: 150ms;
 }
