@@ -1,26 +1,26 @@
 var $car = document.querySelector('.car');
 
 var car = {
-  x: 25,
+  isMoving: false,
+  x: 30,
   y: 0
 };
 
 var timer;
 
-function startCar() {
-  timer = setInterval(moveCarLeft, 16);
-}
-
-function stopCar() {
-  clearInterval(timer);
-}
+document.addEventListener('keydown', function (e) {
+  if (e.keyCode === 32 && car.isMoving === false) {
+    timer = setInterval(moveCarLeft, 16);
+    car.isMoving = true;
+  } else if (e.keyCode === 32 && car.isMoving === true) {
+    clearInterval(timer);
+    car.isMoving = false;
+  }
+});
 
 function moveCarLeft() {
   $car.style.left = (car.x += 1) + 'px';
 }
-
-startCar();
-stopCar();
 
 // function moveCarRight() {
 //   $car.style.left = (car.x -= 1) + 'px';
