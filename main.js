@@ -1,4 +1,5 @@
 var $car = document.querySelector('.car');
+var $background = document.querySelector('.background');
 
 var car = {
   isMoving: false,
@@ -51,4 +52,43 @@ document.addEventListener('keydown', function (e) {
     car.isFacing = 'up';
     $car.style.transform = 'rotate(-90deg)';
   }
+});
+
+var $buttonTurtle = document.querySelector('.button-turtle');
+$buttonTurtle.addEventListener('click', function () {
+  $car.setAttribute('src', 'images/turtle.png');
+  $car.style.margin = '20px 0';
+  $background.style.backgroundImage = 'url(images/grass.jpeg)';
+  $buttonCar.classList.remove('mode-active');
+  $buttonCar.classList.add('mode-inactive');
+  $buttonTurtle.classList.remove('mode-inactive');
+  $buttonTurtle.classList.add('mode-active');
+  $buttonFishy.classList.remove('mode-active');
+  $buttonFishy.classList.add('mode-inactive');
+});
+
+var $buttonCar = document.querySelector('.button-car');
+$buttonCar.addEventListener('click', function () {
+  $car.setAttribute('src', 'images/f1.svg');
+  $car.style.margin = '0';
+  $background.style.backgroundImage = 'none';
+  $buttonCar.classList.remove('mode-inactive');
+  $buttonCar.classList.add('mode-active');
+  $buttonTurtle.classList.remove('mode-active');
+  $buttonTurtle.classList.add('mode-inactive');
+  $buttonFishy.classList.remove('mode-active');
+  $buttonFishy.classList.add('mode-inactive');
+});
+
+var $buttonFishy = document.querySelector('.button-fishy');
+$buttonFishy.addEventListener('click', function () {
+  $car.setAttribute('src', 'images/fishy.png');
+  $car.style.margin = '20px 0';
+  $background.style.backgroundImage = 'url(images/water.jpeg)';
+  $buttonCar.classList.remove('mode-active');
+  $buttonCar.classList.add('mode-inactive');
+  $buttonTurtle.classList.remove('mode-active');
+  $buttonTurtle.classList.add('mode-inactive');
+  $buttonFishy.classList.remove('mode-inactive');
+  $buttonFishy.classList.add('mode-active');
 });

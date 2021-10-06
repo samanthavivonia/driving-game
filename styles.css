@@ -8,14 +8,55 @@ body {
 
 .background {
   background-color: #278d25;
+  background-image: none;
+  background-size: cover;
   width: 100vw;
   height: 100vh;
   border: #1c671b solid 5px;
   padding: 0 25px;
+  transition: 150ms;
 }
 
 .car {
   width: 10%;
   position: absolute;
   transition: 150ms;
+}
+
+.buttons {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  bottom: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 1em;
+  padding: 10px 15px;
+  margin: 7px;
+  border: none;
+  border-radius: 20px;
+  transition: 200ms;
+}
+
+button:hover {
+  position: relative;
+  bottom: 5px;
+  box-shadow: 0 5px 3px rgba(0, 0, 0, 0.116);
+}
+
+.mode-inactive {
+  color: black;
+  background-color: white;
+}
+
+.mode-active {
+  color: white;
+  background-color: #1c671b;
+  border: #124412 solid 2px;
 }
